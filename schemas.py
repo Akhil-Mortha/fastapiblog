@@ -44,7 +44,7 @@ class TokenData(BaseModel):
     email: Optional[str] = None
 
 
-class ShoeAll(BaseModel):
+class ShowAll(BaseModel):
     creator: ShowUser
 
 
