@@ -14,7 +14,7 @@ router = APIRouter(
 
 
 
-@router.get('/',response_model=List[schemas.ShowAll])
+@router.get('/',response_model=schemas.ShowAll)#List[schemas.ShowAll] if u want other creators too
 def all(db: Session = Depends(get_db),current_user: schemas.User = Depends(oauth2.get_current_user)):
     return blog.get_all(db)
 
