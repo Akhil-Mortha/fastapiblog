@@ -1,5 +1,5 @@
 from typing import List,Optional
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 
 class BlogBase(BaseModel):
     title: str
@@ -47,7 +47,7 @@ class TokenData(BaseModel):
 class Showall(BaseModel):
     name: str
     email: str
-    blogs :List[Blog]=[]
+    blogs :List[Blog]=Field(default_factory=List)
 
 class ShowAll(BaseModel):
     creator: Showall
