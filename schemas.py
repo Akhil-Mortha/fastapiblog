@@ -44,17 +44,7 @@ class TokenData(BaseModel):
     email: Optional[str] = None
 
 
-class Showall(BaseModel):
-    name: str
-    email: str
-    blogs :List[Blog]=Field(default_factory=list)
-    class config():
-        orm_mode=True
 
-
-
-class ShowAll(BaseModel):
-    creator: Showall
 
 
 

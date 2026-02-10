@@ -14,9 +14,9 @@ router = APIRouter(
 
 
 
-@router.get('/',response_model=schemas.ShowAll)#List[schemas.ShowAll] if u want other creators too
+@router.get('/',response_model=schemas.ShowUser)#List[schemas.ShowAll] if u want other creators too
 def all(db: Session = Depends(get_db),current_user: schemas.User = Depends(oauth2.get_current_user)):
-    return {"creator": current_user}  #blog.get_all(db)
+    return blog.get_all(db)
 
 @router.post('/',status_code=status.HTTP_201_CREATED)                               #201 for created
 def create(request: schemas.Blog, db: Session = Depends(get_db),current_user: schemas.User = Depends(oauth2.get_current_user)): #202 for accepted
