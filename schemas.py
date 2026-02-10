@@ -47,7 +47,7 @@ class TokenData(BaseModel):
 class Showall(BaseModel):
     name: str
     email: str
-    blogs :List[Blog]=Field(default_factory=List)
+    blogs :List[Blog]=Field(default_factory=list)
 
 class ShowAll(BaseModel):
     creator: Showall
