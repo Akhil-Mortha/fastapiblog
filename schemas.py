@@ -28,6 +28,7 @@ class ShowBlog(BaseModel):
     creator: ShowUser
     class config():
         orm_mode=True
+       
 
 class Login(BaseModel):
     username: str
@@ -41,5 +42,10 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     email: Optional[str] = None
+
+
+class ShoeAll(BaseModel):
+    creator: ShowUser
+
 
 
